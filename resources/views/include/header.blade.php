@@ -253,6 +253,14 @@
                                 </ul>
                             </li>
                             <li class="submenu-open">
+                                <h6 class="submenu-hdr">Why Choose Us</h6>
+                                <ul id="main_menu_list">
+                                    <li class="permission" data-module="service" data-title="Service">
+                                        <a href="{{ url('admin/why_chooses') }}"><i data-feather="box"></i><span>Reason List</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu-open">
                                 <h6 class="submenu-hdr">PDF</h6>
                                 <ul id="main_menu_list">
                                     <li class="permission" data-module="pdf" data-title="PDF">

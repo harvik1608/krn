@@ -7,10 +7,14 @@
     use App\Http\Controllers\ProjectController;
     use App\Http\Controllers\DownloadController;
     use App\Http\Controllers\BlogController;
+    use App\Http\Controllers\WhyController;
+    use App\Http\Controllers\HomeController;
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/about', [HomeController::class, 'index'])->name('about');
+    Route::get('/projects', [HomeController::class, 'index'])->name('projects');
+    Route::get('/blogs', [HomeController::class, 'index'])->name('blogs');
+    Route::get('/resources', [HomeController::class, 'index'])->name('resources');
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [AuthController::class, 'index'])->name('login');
@@ -36,6 +40,9 @@
 
             Route::resource('blogs', BlogController::class);
             Route::get('/load-blogs', [BlogController::class, 'load'])->name('admin.blog.load');
+
+            Route::resource('why_chooses', WhyController::class);
+            Route::get('/load-why_chooses', [WhyController::class, 'load'])->name('admin.why_chooses.load');
             
             Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
         });

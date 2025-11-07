@@ -16,22 +16,50 @@
                 </div>
                 <div class="card-body profile-body">
                     <div class="row">
-                        <div class="col-lg-4 mb-3">
+                        <div class="col-lg-3 mb-3">
                             <label class="form-label">App. Name<span class="text-danger ms-1">*</span></label>
                             <input type="text" class="form-control" name="app_name" id="app_name" value="{{ isset($app_name) ? $app_name : '' }}" autofocus />
                         </div>
-                        <div class="col-lg-4 mb-3">
+                        <div class="col-lg-3 mb-3">
                             <label class="form-label">App. Email<span class="text-danger ms-1">*</span></label>
-                            <input type="text" class="form-control" name="app_email" id="app_email" value="{{ isset($app_email) ? $app_email : '' }}" autofocus />
+                            <input type="text" class="form-control" name="app_email" id="app_email" value="{{ isset($app_email) ? $app_email : '' }}" />
                         </div>
-                        <div class="col-lg-4 mb-3">
+                        <div class="col-lg-3 mb-3">
                             <label class="form-label">App. Phone<span class="text-danger ms-1">*</span></label>
-                            <input type="text" class="form-control" name="app_phone" id="app_phone" value="{{ isset($app_phone) ? $app_phone : '' }}" autofocus />
+                            <input type="text" class="form-control" name="app_phone" id="app_phone" value="{{ isset($app_phone) ? $app_phone : '' }}" />
                         </div>
-                        <!-- <div class="col-lg-4 mb-3">
+                        <div class="col-lg-3 mb-3">
                             <label class="form-label">App. Theme Color<span class="text-danger ms-1">*</span></label>
-                            <input type="text" class="form-control" name="app_theme_color" id="app_theme_color" value="{{ isset($app_theme_color) ? $app_theme_color : '' }}" autofocus />
-                        </div> -->
+                            <input type="text" class="form-control" name="app_theme_color" id="app_theme_color" value="{{ isset($app_theme_color) ? $app_theme_color : '' }}" />
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label class="form-label">App. Founder Name<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="app_founder_name" id="app_founder_name" value="{{ isset($app_founder_name) ? $app_founder_name : '' }}" />
+                        </div>
+                        <div class="col-lg-3 mb-3">
+                            <label class="form-label">App. Helpline No.<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="app_helpline_no" id="app_helpline_no" value="{{ isset($app_helpline_no) ? $app_helpline_no : '' }}" />
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label">App. Address<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="app_address" id="app_address" value="{{ isset($app_address) ? $app_address : '' }}" />
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label">App. Youtube Video URL<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="app_video" id="app_video" value="{{ isset($app_video) ? $app_video : '' }}" />
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label">Facebook URL<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="facebook_url" id="facebook_url" value="{{ isset($facebook_url) ? $facebook_url : '' }}" />
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label">Twitter URL<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="twitter_url" id="twitter_url" value="{{ isset($twitter_url) ? $twitter_url : '' }}" />
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label">Linkedin URL<span class="text-danger ms-1">*</span></label>
+                            <input type="text" class="form-control" name="linkedin_url" id="linkedin_url" value="{{ isset($linkedin_url) ? $linkedin_url : '' }}" />
+                        </div>
                     </div>
                     <div class="text-end mt-2">
                         <button type="submit" class="btn btn-primary">SUBMIT</button>
