@@ -46,11 +46,11 @@
 						<div class="collapse navbar-collapse main-menu">
 	                        <div class="nav-menu-wrapper">
 	                            <ul class="navbar-nav mr-auto" id="menu">
-	                                <li class="nav-item"><a class="nav-link" href="about.html">Home</a>
-	                                <li class="nav-item"><a class="nav-link" href="about.html">Services</a>
-	                                <li class="nav-item"><a class="nav-link" href="about.html">Resources</a>
-	                                <li class="nav-item"><a class="nav-link" href="about.html">Projects</a>
-	                                <li class="nav-item"><a class="nav-link" href="about.html">Blogs</a>
+	                                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a>
+	                                <li class="nav-item"><a class="nav-link" href="{{ route('services') }}">Services</a>
+	                                <li class="nav-item"><a class="nav-link" href="{{ route('resources') }}">Resources</a>
+	                                <li class="nav-item"><a class="nav-link" href="{{ route('services') }}">Projects</a>
+	                                <li class="nav-item"><a class="nav-link" href="{{ route('services') }}">Blogs</a>
 	                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>                             
 	                            </ul>
 	                        </div>

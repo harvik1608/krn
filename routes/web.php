@@ -11,10 +11,12 @@
     use App\Http\Controllers\HomeController;
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/services', [HomeController::class, 'services'])->name('services');
+    Route::get('/service/{slug}', [HomeController::class, 'service'])->name('service');
+    Route::get('/resources', [HomeController::class, 'resources'])->name('resources');
     Route::get('/about', [HomeController::class, 'index'])->name('about');
     Route::get('/projects', [HomeController::class, 'index'])->name('projects');
     Route::get('/blogs', [HomeController::class, 'index'])->name('blogs');
-    Route::get('/resources', [HomeController::class, 'index'])->name('resources');
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [AuthController::class, 'index'])->name('login');
