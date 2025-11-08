@@ -14,9 +14,11 @@
     Route::get('/services', [HomeController::class, 'services'])->name('services');
     Route::get('/service/{slug}', [HomeController::class, 'service'])->name('service');
     Route::get('/resources', [HomeController::class, 'resources'])->name('resources');
+    Route::get('/projects', [HomeController::class, 'projects'])->name('projects');
+    Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
+    Route::get('/blog/{slug}', [HomeController::class, 'blog'])->name('blog');
+    Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
     Route::get('/about', [HomeController::class, 'index'])->name('about');
-    Route::get('/projects', [HomeController::class, 'index'])->name('projects');
-    Route::get('/blogs', [HomeController::class, 'index'])->name('blogs');
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [AuthController::class, 'index'])->name('login');

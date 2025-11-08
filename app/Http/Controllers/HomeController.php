@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Download;
+use App\Models\Project;
 use App\Http\Controllers\CommonController;
 
 class HomeController extends CommonController
@@ -44,5 +45,27 @@ class HomeController extends CommonController
         $downloads = Download::select("id","name","file")->where("is_active",1)->get();
         $blogs = Blog::select("id","title","banner")->where("is_active",1)->get();
         return view('resources',compact('downloads','blogs'));
+    }
+
+    public function projects()
+    {
+        $projects = Project::select("id","name","avatar")->where("is_active",1)->get();
+        return view('projects',compact('projects'));
+    }
+
+    public function blogs()
+    {
+        $blogs = Blog::select("id","slug","title","banner")->where("is_active",1)->get();
+        return view('blogs',compact('blogs'));
+    }
+
+    public function blog($slug)
+    {
+        $blog = Blog::where("slug",$slug)->where("is_active",1)->first();
+        if(!$blog) {
+            return redirect()->route('home');
+        }
+        $blogs = Blog::where("is_active",1)->get();
+        return view('blog',compact('blog','blogs'));
     }
 }
