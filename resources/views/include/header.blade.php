@@ -63,7 +63,7 @@
                                         </div>
                                         <span class="input-group-text">
                                             <kbd class="d-flex align-items-center">
-                                                <img src="{{ asset('assets/img/icons/command.svg') }}" alt="img" class="me-1">K</kbd>
+                                                <img src="{{ asset('assets/img/profiles/command.svg') }}" alt="img" class="me-1">K</kbd>
                                         </span>
                                     </div>
                                     <div class="dropdown-menu search-dropdown" aria-labelledby="dropdownMenuClickable">
@@ -136,7 +136,7 @@
             <div class="sidebar" id="sidebar">
                 <div class="sidebar-logo">
                     <a href="{{ route('admin.dashboard') }}" class="logo logo-normal">
-                        <img src="{{ asset('assets/img/slps-logo.svg') }}" alt="Img">
+                        <img src="{{ asset('assets/img/logo.svg') }}" alt="Img">
                     </a>
                     <a href="{{ route('admin.dashboard') }}" class="logo logo-white">
                         <img src="{{ asset('assets/img/slps-logo.svg') }}" alt="Img">
@@ -151,7 +151,7 @@
                 <div class="modern-profile p-3 pb-0">
                     <div class="text-center rounded bg-light p-3 mb-4 user-profile">
                         <div class="avatar avatar-lg online mb-3">
-                            <img src="{{ asset('assets/img/customer/customer15.jpg') }}" alt="Img" class="img-fluid rounded-circle">
+                            <img src="{{ asset('assets/img/profiles/customer15.jpg') }}" alt="Img" class="img-fluid rounded-circle">
                         </div>
                         <h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>
                         <p class="fs-12 mb-0">System Admin</p>
@@ -167,7 +167,7 @@
                 <div class="sidebar-header p-3 pb-0 pt-2">
                     <div class="text-center rounded bg-light p-2 mb-4 sidebar-profile d-flex align-items-center">
                         <div class="avatar avatar-md onlin">
-                            <img src="{{ asset('assets/img/customer/customer15.jpg') }}" alt="Img" class="img-fluid rounded-circle">
+                            <img src="{{ asset('assets/img/profiles/customer15.jpg') }}" alt="Img" class="img-fluid rounded-circle">
                         </div>
                         <div class="text-start sidebar-profile-info ms-2">
                             <h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>

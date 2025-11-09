@@ -27,6 +27,9 @@
 				font-weight: 400;
 				font-style: normal;
 			}
+			div[class$="-error"] {
+				color: #FF0000;
+			}
 		</style>
 	</head>
 	<body>
@@ -40,8 +43,8 @@
 			<div class="header-sticky">
 				<nav class="container">
 					<div class="navbar navbar-expand-lg">
-						<a class="navbar-brand" href="index-2.html">
-							<img src="{{ asset('assets/website/images/logo.svg') }}" alt="Logo">
+						<a class="navbar-brand" href="{{ route('home') }}">
+							<img src="{{ asset('assets/website/images/krn_logo.jpg') }}" alt="Logo">
 						</a>
 						<div class="collapse navbar-collapse main-menu">
 	                        <div class="nav-menu-wrapper">
@@ -55,7 +58,7 @@
 	                            </ul>
 	                        </div>
 	                        <div class="header-btn d-inline-flex">
-	                            <a href="contact.html" class="btn-default">get in touch</a>
+	                            <a href="{{ route('contact-us') }}" class="btn-default">get in touch</a>
 	                        </div>
 						</div>
 						<div class="navbar-toggle"></div>
@@ -75,7 +78,7 @@
 	                            <div class="col-md-6">
 	                                <!-- Footer Logo Start -->
 	                                <div class="footer-logo">
-	                                    <img src="{{ asset('assets/website/images/footer-logo.svg') }}" alt="">
+	                                    <img src="{{ asset('assets/website/images/krn_logo.jpg') }}" alt="">
 	                                </div>
 	                                <!-- Footer Logo End -->
 	                            </div>
@@ -123,13 +126,16 @@
 	                <div class="col-lg-4 col-md-6">
 	                    <!-- Footer Links Start -->
 	                     <div class="footer-links">
-	                        <h3>portfolio</h3>
+	                        <h3>Our Services</h3>
 	                        <ul>
-	                            <li><a href="project-single.html">luxury home design</a></li>
-	                            <li><a href="project-single.html">residential interior design</a></li>
-	                            <li><a href="project-single.html">commercial space design</a></li>
-	                            <li><a href="project-single.html">residential interior design</a></li>
-	                            <li><a href="project-single.html">renovation and restoration design</a></li>
+	                        	@php
+	                        		$services = services();
+	                        	@endphp
+	                        	@if($services)
+	                        		@foreach($services as $service)
+	                        			<li><a href="{{ route('service',['slug' => $service->slug]) }}">{{ $service->name }}</a></li>
+	                        		@endforeach
+	                        	@endif
 	                        </ul>
 	                     </div>
 	                    <!-- Footer Links End -->
@@ -209,5 +215,6 @@
 		<script src="{{ asset('assets/website/js/jquery.mb.YTPlayer.min.js') }}"></script>
 		<script src="{{ asset('assets/website/js/wow.min.js') }}"></script>
 		<script src="{{ asset('assets/website/js/function.js') }}"></script>
+		<script src="{{ asset('custom.js') }}"></script>
 	</body>
 </html>

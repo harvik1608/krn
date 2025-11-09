@@ -18,6 +18,7 @@
     Route::get('/blogs', [HomeController::class, 'blogs'])->name('blogs');
     Route::get('/blog/{slug}', [HomeController::class, 'blog'])->name('blog');
     Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
+    Route::post('/submit-contactUs', [HomeController::class, 'submit_contactus'])->name('submit.contact-us');
     Route::get('/about', [HomeController::class, 'index'])->name('about');
 
     Route::prefix('admin')->group(function () {
@@ -47,7 +48,10 @@
 
             Route::resource('why_chooses', WhyController::class);
             Route::get('/load-why_chooses', [WhyController::class, 'load'])->name('admin.why_chooses.load');
-            
+
+            Route::get('inquiries', [DashboardController::class, 'inquiries'])->name('admin.inquiry');
+            Route::get('/load-inquiries', [DashboardController::class, 'load_inquiries'])->name('admin.inquiry.load');
+
             Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
         });
     });

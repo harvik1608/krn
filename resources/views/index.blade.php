@@ -1,6 +1,6 @@
 @extends('include.front_header')
 @section('content')
-<div class="hero parallaxie">
+<div class="hero parallaxie" style="background-image: url({{ asset('uploads/'.BANNER)  }});">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-10">
@@ -10,8 +10,8 @@
                         <p class="wow fadeInUp" data-wow-delay="0.2s">Innovative Architectural Design Across England</p>
                     </div>
                     <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="{{ route('about') }}" class="btn-default">explore more</a>
-                        <a href="{{ route('projects') }}" class="btn-default btn-highlighted">view projects</a>
+                        <a href="{{ route('projects') }}" class="btn-default">view projects</a>
+                        <!-- <a href="{{ route('projects') }}" class="btn-default btn-highlighted">view projects</a> -->
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <!-- About Image 1 Start -->
                     <div class="about-img-1">
                         <figure class="image-anime reveal">
-                            <img src="{{ asset('assets/website/images/about-img-1.jpg') }}" alt="">
+                            <img src="{{ asset('uploads/'.ABOUT_IMAGE_1) }}" alt="">
                         </figure>
                     </div>
                     <!-- About Image 1 End -->
@@ -35,12 +35,12 @@
                     <!-- About Image 2 Start -->
                     <div class="about-img-2">
                         <figure class="image-anime reveal">
-                            <img src="{{ asset('assets/website/images/about-img-2.jpg') }}" alt="">
+                            <img src="{{ asset('uploads/'.ABOUT_IMAGE_2) }}" alt="">
                         </figure>
 
                         <!-- Feedback Counter Start -->
                         <div class="experience-counter">
-                            <h3><span class="counter">15</span>+</h3>
+                            <h3><span class="counter">{{ YEAR_OF_EXPERIENCE }}</span>+</h3>
                             <p>Years of experience</p>
                         </div>
                         <!-- Feedback Counter End -->
@@ -49,7 +49,7 @@
 
                     <!-- Feedback Counter Start -->
                     <div class="feedback-counter">
-                        <p><span class="counter">95</span>%</p>
+                        <p><span class="counter">{{ POSITIVE_FEEDBACK }}</span>%</p>
                         <h3>positive feedback</h3>
                     </div>
                     <!-- Feedback Counter End -->
@@ -83,7 +83,7 @@
 
                             <!-- About Us Content Button Start -->
                             <div class="about-us-content-btn wow fadeInUp" data-wow-delay="0.6s">
-                                <a href="about.html" class="btn-default">read more</a>
+                                <a href="{{ route('about') }}" class="btn-default">read more</a>
                             </div>
                             <!-- About Us Content Button End -->
                         </div>
@@ -171,7 +171,7 @@
                         <!-- Why Choose img 1 Start -->
                         <div class="why-choose-img-1">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('assets/website/images/why-choose-img-1.jpg') }}" alt="">
+                                <img src="{{ asset('uploads/'.WHY_CHOOSE_1) }}" alt="">
                             </figure>
                         </div>
                         <!-- Why Choose img 1 End -->
@@ -179,7 +179,7 @@
                         <!-- Why Choose img 2 Start -->
                         <div class="why-choose-img-2">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('assets/website/images/why-choose-img-2.jpg') }}" alt="">
+                                <img src="{{ asset('uploads/'.WHY_CHOOSE_2) }}" alt="">
                             </figure>
                         </div>
                         <!-- Why Choose img 2 End -->
@@ -191,7 +191,7 @@
                         <!-- Why Choose img 3 Start -->
                         <div class="why-choose-img-3">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('assets/website/images/why-choose-img-3.jpg') }}" alt="">
+                                <img src="{{ asset('uploads/'.WHY_CHOOSE_3) }}" alt="">
                             </figure>
                         </div>
                         <!-- Why Choose img 3 End -->
@@ -199,7 +199,7 @@
                         <!-- Why Choose img 4 Start -->
                         <div class="why-choose-img-4">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('assets/website/images/why-choose-img-4.jpg') }}" alt="">
+                                <img src="{{ asset('uploads/'.WHY_CHOOSE_4) }}" alt="">
                             </figure>
                         </div>
                         <!-- Why Choose img 4 End -->
@@ -269,7 +269,7 @@
                         <div class="intro-video-image">
                             <a href="{{ APP_VIDEO }}" class="popup-video" data-cursor-text="Play">
                                 <figure class="image-anime">
-                                    <img src="{{ asset('assets/website/images/intro-video-bg.jpg') }}" alt="">
+                                    <img src="{{ asset('uploads/'.VIDEO) }}" alt="">
                                 </figure>
                             </a>                            
                         </div>
@@ -334,7 +334,7 @@
                 <!-- Our Testimonial Image Start -->
                 <div class="our-testimonials-image">
                     <figure class="image-anime">
-                        <img src="{{ asset('assets/website/images/testimonial-img.jpg') }}" alt="">
+                        <img src="{{ asset('uploads/'.TESTIMONIAL) }}" alt="">
                     </figure>
                 </div>
                 <!-- Our Testimonial Image End -->

@@ -27,7 +27,7 @@
                                             </figure>
                                         </div>
                                         <div class="project-btn">
-                                            <a href="project-single.html"><img src="{{ asset('assets/website/images/arrow-white.svg') }}" alt=""></a>
+                                            <a><img src="{{ asset('assets/website/images/arrow-white.svg') }}" alt=""></a>
                                         </div>
                                     </div>     
                                     <div class="project-content">

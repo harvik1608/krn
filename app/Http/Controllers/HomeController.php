@@ -11,6 +11,7 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Download;
 use App\Models\Project;
+use App\Models\Inquiry;
 use App\Http\Controllers\CommonController;
 
 class HomeController extends CommonController
@@ -67,5 +68,36 @@ class HomeController extends CommonController
         }
         $blogs = Blog::where("is_active",1)->get();
         return view('blog',compact('blog','blogs'));
+    }
+
+    public function contact_us()
+    {
+        return view('contact_us');
+    }
+
+    public function submit_contactus(Request $request)
+    {
+        $post = $request->all();
+        try {
+            $row = new Inquiry;
+            $row->name = trim($post["name"]);
+            $row->email = trim($post["email"]);
+            $row->phone = trim($post["phone"]);
+            $row->message = trim($post["message"]);
+            $row->ip = request()->ip();
+            $row->created_at = date("Y-m-d H:i:s");
+            $row->updated_at = date("Y-m-d H:i:s");
+            $row->save();
+
+            return response()->json([
+                "status" => 200,
+                "message" => 'Your inquiry has been successfully submitted.',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'There was an issue submitting your inquiry. Please try again later.',
+                'message' => $e->getMessage()
+            ], 500);
+        }
     }
 }

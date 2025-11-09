@@ -4,21 +4,52 @@
 	<div class="col-xl-3 col-sm-6 col-12 d-flex">
 		<div class="card color-info bg-primary flex-fill mb-4">
 			<div class="mb-2">
-				<img src="{{ asset('assets/img/icons/total-sales.svg') }}" alt="img">
+				
 			</div>
-			<h3 class="counters" data-count="10000.00">10,000+</h3>
-			<p>No of Total Sales</p>
-			<i data-feather="rotate-ccw" class="feather-16" data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"></i>
+			<h3 class="counters" data-count="{{ $total_faqs }}">{{ $total_faqs }}</h3>
+			<p>TOTAL FAQ</p>
 		</div>
 	</div>
 	<div class="col-xl-3 col-sm-6 col-12 d-flex">
 		<div class="card color-info bg-secondary flex-fill mb-4">
-			<div class="mb-2">
-				<img src="{{ asset('assets/img/icons/purchased-earnings.svg') }}" alt="img">
-			</div>
-			<h3 class="counters" data-count="800.00">800+</h3>
-			<p>No of Total Sales</p>
-			<i data-feather="rotate-ccw" class="feather-16" data-bs-toggle="tooltip" data-bs-placement="top" title="Refresh"></i>
+			<div class="mb-2"></div>
+			<h3 class="counters" data-count="{{ $total_blogs }}">{{ $total_blogs }}</h3>
+			<p>TOTAL BLOG</p>
+		</div>
+	</div>
+	<div class="col-xl-3 col-sm-6 col-12 d-flex">
+		<div class="card color-info bg-success flex-fill mb-4">
+			<div class="mb-2"></div>
+			<h3 class="counters" data-count="{{ $total_services }}">{{ $total_services }}</h3>
+			<p>TOTAL SERVICE</p>
+		</div>
+	</div>
+	<div class="col-xl-3 col-sm-6 col-12 d-flex">
+		<div class="card color-info bg-info flex-fill mb-4">
+			<div class="mb-2"></div>
+			<h3 class="counters" data-count="{{ $total_projects }}">{{ $total_projects }}</h3>
+			<p>TOTAL PROJECT</p>
+		</div>
+	</div>
+	<div class="col-xl-3 col-sm-6 col-12 d-flex">
+		<div class="card color-info bg-info flex-fill mb-4">
+			<div class="mb-2"></div>
+			<h3 class="counters" data-count="{{ $total_inquiries }}">{{ $total_inquiries }}</h3>
+			<p>TOTAL INQUIRY</p>
+		</div>
+	</div>
+	<div class="col-xl-3 col-sm-6 col-12 d-flex">
+		<div class="card color-info bg-success flex-fill mb-4">
+			<div class="mb-2"></div>
+			<h3 class="counters" data-count="{{ $total_reasons }}">{{ $total_reasons }}</h3>
+			<p>TOTAL REASON</p>
+		</div>
+	</div>
+	<div class="col-xl-3 col-sm-6 col-12 d-flex">
+		<div class="card color-info bg-secondary flex-fill mb-4">
+			<div class="mb-2"></div>
+			<h3 class="counters" data-count="{{ $total_pdfs }}">{{ $total_pdfs }}</h3>
+			<p>TOTAL PDF</p>
 		</div>
 	</div>
 </div>
