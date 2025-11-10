@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Project extends Model
+class Tool extends Model
 {
     use SoftDeletes;    
-    protected $fillable = ['name','avatar','after_avatar','address','lat','lng','is_active'];
+    protected $fillable = ['title','link','is_active'];
 }

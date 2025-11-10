@@ -59,6 +59,12 @@ $(document).ready(function(){
 		} else {
 			$(".phone-error").html("");
 		}
+		if($("#contactForm #location").val().trim() == "") {
+			isError = 1;
+			$(".location-error").html("<small><i class='fas fa-warning'></i> Enter your location</small>");
+		} else {
+			$(".location-error").html("");
+		}
 		if($("#contactForm #message").val().trim() == "") {
 			isError = 1;
 			$(".message-error").html("<small><i class='fas fa-warning'></i> Enter your message</small>");
@@ -89,6 +95,14 @@ $(document).ready(function(){
 				}
 			});
 		}
+	});
+	$(".bedroom").mouseover(function(){
+		var avatar = $(this).attr("data-afterAvatar");
+		$(this).find(".main-img").attr("src",avatar);
+	});
+	$(".bedroom").mouseout(function(){
+		var avatar = $(this).attr("data-beforeAvatar");
+		$(this).find(".main-img").attr("src",avatar);
 	});
 });
 function remove_row(deleteUrl)

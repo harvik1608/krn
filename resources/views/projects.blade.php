@@ -18,12 +18,12 @@
                 <div class="row project-item-boxes align-items-center">
                     @if(!$projects->isEmpty())
                         @foreach($projects as $project)
-                            <div class="col-md-6 project-item-box architecture bedroom">
+                            <div class="col-md-6 project-item-box architecture bedroom" data-beforeAvatar="{{ asset('uploads/project/'.$project->avatar) }}" data-afterAvatar="{{ asset('uploads/project/'.$project->after_avatar) }}">
                                 <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
                                     <div class="project-image">
                                         <div class="project-featured-image">
                                             <figure class="image-anime">
-                                                <img src="{{ asset('assets/website/images/project-1.jpg') }}" alt="">
+                                                <img src="{{ asset('uploads/project/'.$project->avatar) }}" alt="" class="main-img">
                                             </figure>
                                         </div>
                                         <div class="project-btn">

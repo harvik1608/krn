@@ -10,6 +10,7 @@ use App\Models\Service;
 use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Download;
+use App\Models\Tool;
 use App\Models\Project;
 use App\Models\Inquiry;
 use App\Http\Controllers\CommonController;
@@ -44,13 +45,14 @@ class HomeController extends CommonController
     public function resources()
     {
         $downloads = Download::select("id","name","file")->where("is_active",1)->get();
+        $tools = Tool::select("id","name","link")->where("is_active",1)->get();
         $blogs = Blog::select("id","title","banner")->where("is_active",1)->get();
-        return view('resources',compact('downloads','blogs'));
+        return view('resources',compact('downloads','tools','blogs'));
     }
 
     public function projects()
     {
-        $projects = Project::select("id","name","avatar")->where("is_active",1)->get();
+        $projects = Project::select("id","name","avatar","after_avatar")->where("is_active",1)->get();
         return view('projects',compact('projects'));
     }
 
@@ -70,6 +72,12 @@ class HomeController extends CommonController
         return view('blog',compact('blog','blogs'));
     }
 
+    public function faqs()
+    {
+        $faqs = Faq::select("question","answer")->where("is_active",1)->get();
+        return view('faqs',compact('faqs'));
+    }
+
     public function contact_us()
     {
         return view('contact_us');
@@ -84,6 +92,7 @@ class HomeController extends CommonController
             $row->email = trim($post["email"]);
             $row->phone = trim($post["phone"]);
             $row->message = trim($post["message"]);
+            $row->location = trim($post["location"]);
             $row->ip = request()->ip();
             $row->created_at = date("Y-m-d H:i:s");
             $row->updated_at = date("Y-m-d H:i:s");

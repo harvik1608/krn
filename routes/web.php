@@ -6,6 +6,7 @@
     use App\Http\Controllers\ServiceController;
     use App\Http\Controllers\ProjectController;
     use App\Http\Controllers\DownloadController;
+    use App\Http\Controllers\ToolController;
     use App\Http\Controllers\BlogController;
     use App\Http\Controllers\WhyController;
     use App\Http\Controllers\HomeController;
@@ -20,6 +21,7 @@
     Route::get('/contact-us', [HomeController::class, 'contact_us'])->name('contact-us');
     Route::post('/submit-contactUs', [HomeController::class, 'submit_contactus'])->name('submit.contact-us');
     Route::get('/about', [HomeController::class, 'index'])->name('about');
+    Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
 
     Route::prefix('admin')->group(function () {
         Route::get('/', [AuthController::class, 'index'])->name('login');
@@ -42,6 +44,9 @@
 
             Route::resource('downloads', DownloadController::class);
             Route::get('/load-downloads', [DownloadController::class, 'load'])->name('admin.download.load');
+
+            Route::resource('tools', ToolController::class);
+            Route::get('/load-tools', [ToolController::class, 'load'])->name('admin.tool.load');
 
             Route::resource('blogs', BlogController::class);
             Route::get('/load-blogs', [BlogController::class, 'load'])->name('admin.blog.load');

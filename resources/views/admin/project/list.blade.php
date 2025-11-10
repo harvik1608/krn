@@ -26,7 +26,8 @@
                 <thead class="thead-light">
                     <tr>
                         <th width="5%">#</th>
-                        <th width="10%">Photo</th>
+                        <th width="10%">Before</th>
+                        <th width="10%">After</th>
                         <th width="20%">Name</th>
                         <th width="15%">Status</th>
                         <th width="10%" class="no-sort"></th>
@@ -63,6 +64,7 @@
 	            "columns": [
 	                { data: 'id' },
 	                { data: 'avatar' },
+	                { data: 'after_avatar' },
 	                { data: 'name' },
 	                { data: 'status' },
 	                { 

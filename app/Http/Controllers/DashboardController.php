@@ -241,7 +241,7 @@ class DashboardController extends Controller
                     'email' => $row->email,
                     'phone' => $row->phone,
                     'message' => $row->message,
-                    'created_at' => date('d M, Y h:i A',strtotime($row->created_at)),
+                    'location' => $row->location,
                 ];
             }
             return response()->json([

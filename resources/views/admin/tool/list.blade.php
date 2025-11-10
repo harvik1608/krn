@@ -4,9 +4,12 @@
 <div class="page-header">
     <div class="add-item d-flex">
         <div class="page-title">
-            <h4 class="fw-bold">Inquiry List</h4>
+            <h4 class="fw-bold">Planning Tool List</h4>
             <h6></h6>
         </div>
+    </div>
+    <div class="page-btn">
+        <a href="{{ url('admin/tools/create') }}" class="btn btn-primary text-white"><i class="ti ti-circle-plus me-1"></i>New Planning Tool</a>
     </div>
 </div>
 <div class="card">
@@ -23,11 +26,9 @@
                 <thead class="thead-light">
                     <tr>
                         <th width="5%">#</th>
-                        <th width="15%">Name</th>
-                        <th width="20%">Email</th>
-                        <th width="10%">Phone</th>
-                        <th width="20%">Location</th>
-                        <th width="30%">Message</th>
+                        <th width="70%">Name</th>
+                        <th width="15%">Status</th>
+                        <th width="10%" class="no-sort"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,14 +42,14 @@
 <script src="{{ asset('assets/js/dataTables.bootstrap5.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.4/jquery-confirm.min.js"></script>
 <script>
-	var page_title = "Inquiry List";
+	var page_title = "Planning Tool List";
 	$(document).ready(function(){
 		$(document).ready(function(){
 	        $('#tblList').DataTable({
 	            "processing": true,
 	            "serverSide": true,
 	            "ajax": {
-	                "url": "{{ route('admin.inquiry.load') }}",
+	                "url": "{{ route('admin.tool.load') }}",
 	                "type": "GET",
 	                "data": function(d) {
 	                    // You can send extra parameters if needed
@@ -61,10 +62,15 @@
 	            "columns": [
 	                { data: 'id' },
 	                { data: 'name' },
-	                { data: 'email' },
-	                { data: 'phone' },
-	                { data: 'location' },
-	                { data: 'message' }
+	                { data: 'status' },
+	                { 
+	                    data: 'actions', 
+	                    orderable: false, 
+	                    searchable: false,
+	                    createdCell: function(td, cellData, rowData, row, col) {
+	                        $(td).addClass('action-table-data'); // Add custom class to <td>
+	                    }
+	                }
 	            ],
 	            "language": {
 	                search: ' ',

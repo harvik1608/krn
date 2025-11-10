@@ -45,15 +45,17 @@
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name*" />
                                     <div class="help-block with-errors name-error"></div>
                                 </div>
-
                                 <div class="form-group col-md-6 mb-4">
                                     <input type="email" name ="email" class="form-control" id="email" placeholder="Your Email*" />
                                     <div class="help-block with-errors email-error"></div>
                                 </div>
-
-                                <div class="form-group col-md-12 mb-4">
+                                <div class="form-group col-md-6 mb-4">
                                     <input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone*" />
                                     <div class="help-block with-errors phone-error"></div>
+                                </div>
+                                <div class="form-group col-md-6 mb-4">
+                                    <input type="text" name="location" class="form-control" id="location" placeholder="Your Location*" />
+                                    <div class="help-block with-errors location-error"></div>
                                 </div>
 
                                 <div class="form-group col-md-12 mb-5">

@@ -266,6 +266,9 @@
                                     <li class="permission" data-module="pdf" data-title="PDF">
                                         <a href="{{ url('admin/downloads') }}"><i data-feather="box"></i><span>PDF Download List</span></a>
                                     </li>
+                                    <li class="permission" data-module="tool" data-title="Planning Tool">
+                                        <a href="{{ url('admin/tools') }}"><i data-feather="box"></i><span>Planning Tool List</span></a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

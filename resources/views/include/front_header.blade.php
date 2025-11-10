@@ -53,7 +53,8 @@
 	                                <li class="nav-item"><a class="nav-link" href="{{ route('services') }}">Services</a>
 	                                <li class="nav-item"><a class="nav-link" href="{{ route('resources') }}">Resources</a>
 	                                <li class="nav-item"><a class="nav-link" href="{{ route('projects') }}">Projects</a>
-	                                <li class="nav-item"><a class="nav-link" href="{{ route('blogs') }}">Blogs</a>
+	                                <!-- <li class="nav-item"><a class="nav-link" href="{{ route('blogs') }}">Blogs</a> -->
+	                                <li class="nav-item"><a class="nav-link" href="{{ route('faqs') }}">FAQ</a>
 	                                <li class="nav-item"><a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a></li>                             
 	                            </ul>
 	                        </div>

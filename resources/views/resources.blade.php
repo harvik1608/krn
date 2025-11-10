@@ -33,9 +33,9 @@
                     <div class="service-catagery-list wow fadeInUp">
                         <h3>Planning Tools</h3>
                         <ul>
-                            @if(!$downloads->isEmpty())
-                                @foreach($downloads as $download)
-                                    <li><a href="{{ asset('uploads/download/'.$download->file) }}" download>{{ $download->name }}</a></li>
+                            @if(!$tools->isEmpty())
+                                @foreach($tools as $tool)
+                                    <li><a href="{{ $tool->link }}" target="_blank">{{ $tool->name }}</a></li>
                                 @endforeach
                             @endif
                         </ul>

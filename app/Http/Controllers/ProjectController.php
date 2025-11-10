@@ -37,6 +37,10 @@ class ProjectController extends Controller
                 if($row->avatar != "" && file_exists(public_path('uploads/project/'.$row->avatar))) {
                     $avatar = '<img src="'.asset('uploads/project/'.$row->avatar).'" class="country-flag" />'; 
                 }
+                $after_avatar = "-";
+                if($row->after_avatar != "" && file_exists(public_path('uploads/project/'.$row->after_avatar))) {
+                    $after_avatar = '<img src="'.asset('uploads/project/'.$row->after_avatar).'" class="country-flag" />'; 
+                }
                 $actions = '<div class="edit-delete-action">';
                     $actions .= '<a href="' . url('admin/projects/'.$row->id.'/edit/') . '" class="me-2 edit-icon p-2 text-success" title="Edit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
@@ -56,6 +60,7 @@ class ProjectController extends Controller
                 $formattedData[] = [
                     'id' => $start + $index + 1,
                     'avatar' => $avatar,
+                    'after_avatar' => $after_avatar,
                     'name' => $row->name,
                     'status' => $row->is_active
                         ? '<span class="badge badge-success badge-xs d-inline-flex align-items-center">Active</span>'
@@ -95,10 +100,22 @@ class ProjectController extends Controller
                 $avatar = Str::random(20) . '.' . $image->getClientOriginalExtension();
                 $path = $image->move(public_path('uploads/project'), $avatar);
             }
+            $after_avatar = "";
+            if ($request->hasFile('after_image')) {
+                $after_image = $request->file('after_image');
+
+                // generate random file name
+                $after_avatar = Str::random(20) . '.' . $after_image->getClientOriginalExtension();
+                $path = $after_image->move(public_path('uploads/project'), $after_avatar);
+            }
 
             $row = new Project;
             $row->name = $post['name'];
             $row->avatar = $avatar;
+            $row->after_avatar = $after_avatar;
+            $row->address = $post["address"];
+            $row->lat = $post["lat"];
+            $row->lng = $post["lng"];
             $row->is_active = $post['is_active'];
             $row->created_at = date("Y-m-d H:i:s");
             $row->save();
@@ -136,10 +153,27 @@ class ProjectController extends Controller
                     unlink((public_path('uploads/project/'.$post["old_avatar"])));
                 }
             }
+            $after_avatar = $post["old_after_avatar"];
+            if($request->hasFile('image')) {
+                $after_image = $request->file('after_image');
+
+                // generate random file name
+                $after_avatar = Str::random(20) . '.' . $after_image->getClientOriginalExtension();
+                $path = $after_image->move(public_path('uploads/project'), $after_avatar);
+
+                // delete old image
+                if($post["old_after_avatar"] != "" && file_exists(public_path('uploads/project/'.$post["old_after_avatar"]))) {
+                    unlink((public_path('uploads/project/'.$post["old_after_avatar"])));
+                }
+            }
 
             $row = Project::find($id);
             $row->name = $post['name'];
             $row->avatar = $avatar;
+            $row->after_avatar = $after_avatar;
+            $row->address = $post["address"];
+            $row->lat = $post["lat"];
+            $row->lng = $post["lng"];
             $row->is_active = $post['is_active'];
             $row->updated_at = date("Y-m-d H:i:s");
             $row->save();
