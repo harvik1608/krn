@@ -22,7 +22,7 @@
                             <div class="post-featured-image">
                                 <figure>
                                     <a href="{{ route('blog', ['slug' => $blog->slug]) }}" class="image-anime" data-cursor-text="View">
-                                        <img src="{{ asset('assets/website/images/post-1.jpg') }}" alt="">
+                                        <img src="{{ asset('uploads/blog/'.$blog->banner) }}" alt="">
                                     </a>
                                 </figure>
                             </div>

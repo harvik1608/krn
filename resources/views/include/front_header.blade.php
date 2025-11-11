@@ -118,7 +118,7 @@
 	                            <li><a href="{{ route('resources') }}">our resources</a></li>
 	                            <li><a href="{{ route('blogs') }}">our blog</a></li>
 	                            <li><a href="{{ route('projects') }}">our latest projects</a></li>
-	                            <li><a href="{{ route('projects') }}">our FAQ</a></li>
+	                            <li><a href="{{ route('faqs') }}">our FAQ</a></li>
 	                        </ul>
 	                     </div>
 	                    <!-- Footer Links End -->

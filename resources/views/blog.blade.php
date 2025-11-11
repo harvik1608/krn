@@ -17,7 +17,7 @@
             <div class="col-lg-12">
                 <div class="post-image">
                     <figure class="image-anime reveal">
-                        <img src="{{ asset('assets/website/images/post-1.jpg') }}" alt="">
+                        <img src="{{ asset('uploads/blog/'.$blog->banner) }}" alt="">
                     </figure>
                 </div>
                 <div class="post-content">

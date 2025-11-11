@@ -84,21 +84,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">Our contact</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">Get in touch with us</h2>
-                    <p class="wow fadeInUp" data-wow-delay="0.2s">Get in touch to discuss your employee wellbeing needs today. Please give us a call, drop us an email or fill out the contact form and we'll get back to you.</p>
                 </div>
-                <!-- Section Title End -->
-            </div>
-
-            <div class="col-lg-12">
-                <!-- Google Map IFrame Start -->
-                <div class="google-map-iframe">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.3454266235894!2d-0.4089861235427637!3d51.635198801359415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766b1ea9bb1d29%3A0x3ec2d4ea7f22caa9!2sHampermill%20Ln%2C%20United%20Kingdom!5e0!3m2!1sen!2sin!4v1762660438396!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <!-- Google Map IFrame End -->
             </div>
         </div>
 

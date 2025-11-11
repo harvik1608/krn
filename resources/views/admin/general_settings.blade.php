@@ -68,6 +68,38 @@
                             <label class="form-label">Linkedin URL<span class="text-danger ms-1">*</span></label>
                             <input type="text" class="form-control" name="linkedin_url" id="linkedin_url" value="{{ isset($linkedin_url) ? $linkedin_url : '' }}" />
                         </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">About Us Title<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="about_us_title" id="about_us_title">{{ isset($about_us_title) ? $about_us_title : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">About Us<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="about_us" id="about_us">{{ isset($about_us) ? $about_us : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Why Choose Us Title<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="why_choose_us_title" id="why_choose_us_title">{{ isset($why_choose_us_title) ? $why_choose_us_title : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Why Choose Us<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="why_choose_us" id="why_choose_us">{{ isset($why_choose_us) ? $why_choose_us : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Service Title<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="service_title" id="service_title">{{ isset($service_title) ? $service_title : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Service<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="service" id="service">{{ isset($service) ? $service : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Insight Title<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="insight_title" id="insight_title">{{ isset($insight_title) ? $insight_title : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label class="form-label">Insight<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="insight" id="insight">{{ isset($insight) ? $insight : '' }}</textarea>
+                        </div>
                         <h2>Banner Image</h2>
                         <div class="col-lg-12 mb-3">
                             <div class="file-drop mb-3 text-center">

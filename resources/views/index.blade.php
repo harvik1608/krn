@@ -52,8 +52,8 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">about us</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Our passion for design, your <span>vision realized</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">At <b>{{ APP_NAME }}</b>, we bring your vision to life through thoughtful, sustainable, and innovative architectural design. Whether you're planning a home extension, a new build, or a commercial development, our RIBA-chartered architects are here to guide you from concept to completion.</p>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ ABOUT_US_TITLE }}</span></h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">{{ ABOUT_US }}</p>
                     </div>
                     <!-- Section Title End -->
 
@@ -123,8 +123,8 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">why choose us</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">A behind the scenes look at <span>our agency</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">From concept to completion, discover how we bring your vision to life with innovation, collaboration, and expert craftsmanship.</p>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ WHY_CHOOSE_US_TITLE }}</span></h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">{{ WHY_CHOOSE_US }}</p>
                     </div>
                     <div class="why-choose-item-list">
                         @if(!empty($reasons->toArray()))
@@ -207,7 +207,7 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">our services</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">Innovative design services for <span>every need</span></h2>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ SERVICE_TITLE }}</span></h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -215,7 +215,7 @@
             <div class="col-lg-6">
                 <!-- Section Title Content Start -->
                 <div class="section-title-content">
-                    <p class="wow fadeInUp" data-wow-delay="0.2s">We offer a range of bespoke interior design services tailored to your unique needs. From concept development to final installation.</p>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">{{ SERVICE }}</p>
                 </div>
                 <!-- Section Title Content End -->
             </div>
@@ -229,7 +229,7 @@
                             <div class="service-image">
                                 <a href="service-single.html" data-cursor-text="View">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('assets/website/images/service-1.jpg') }}" alt="">
+                                        <img src="{{ asset('uploads/service/'.$service->avatar) }}" alt="">
                                     </figure>
                                 </a>
                             </div>
@@ -282,7 +282,7 @@
             <div class="col-lg-12">
                 <div class="section-title">
                     <h3 class="wow fadeInUp">FAQ</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">Everything You <span>Need to Know</span></h2>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Need to Know</span></h2>
                 </div>
                 <div class="page-faqs-catagery">
                     <div class="our-faq-section page-faq-accordion" id="general_information">
@@ -418,7 +418,7 @@
                 <!-- Section Title Start -->
                 <div class="section-title">
                     <h3 class="wow fadeInUp">latest news</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque"><span>Stay Updated with Our</span> Latest Insights</h2>
+                    <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ INSIGHT_TITLE }}</span></h2>
                 </div>
                 <!-- Section Title End -->
             </div>
@@ -426,7 +426,7 @@
             <div class="col-lg-6">
                 <!-- Section Title Content Start -->
                 <div class="section-title-content">
-                    <p class="wow fadeInUp" data-wow-delay="0.2s">Your journey to inspired interiors begins here. Our blog offers a wealth of resources, including design tips, trend analyses.</p>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">{{ INSIGHT }}</p>
                 </div>
                 <!-- Section Title Content End -->
             </div>
@@ -441,7 +441,7 @@
                             <div class="post-featured-image">
                                 <figure>
                                     <a href="{{ url('blog/'.$blog->slug) }}" class="image-anime" data-cursor-text="View">
-                                        <img src="{{ asset('assets/website/images/post-1.jpg') }}" alt="">
+                                        <img src="{{ asset('uploads/blog/'.$blog->banner) }}" alt="">
                                     </a>
                                 </figure>
                             </div>

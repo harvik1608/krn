@@ -20,15 +20,15 @@ class HomeController extends CommonController
     public function index()
     {
         $reasons = WhyChoose::select("id","name")->where("is_active",1)->get();
-        $services = Service::select("id","name")->where("is_active",1)->get();
+        $services = Service::select("id","name","avatar")->where("is_active",1)->get();
         $faqs = Faq::select("question","answer")->where("is_active",1)->get();
-        $blogs = Blog::select("title","slug")->where("is_active",1)->get();
+        $blogs = Blog::select("title","slug","banner")->where("is_active",1)->get();
         return view('index',compact('reasons','services','faqs','blogs'));
     }
 
     public function services()
     {
-        $services = Service::select("id","name","short_description","slug")->where("is_active",1)->get();
+        $services = Service::select("id","name","short_description","slug","avatar")->where("is_active",1)->get();
         return view('services',compact('services'));
     }
 

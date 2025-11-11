@@ -23,7 +23,7 @@
                             <div class="service-image">
                                 <a href="{{ route('service', ['slug' => $service->slug]) }}" data-cursor-text="View">
                                     <figure class="image-anime">
-                                        <img src="{{ asset('assets/website/images/service-1.jpg') }}" alt="">
+                                        <img src="{{ asset('uploads/service/'.$service->avatar) }}" alt="">
                                     </figure>
                                 </a>
                             </div>

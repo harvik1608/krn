@@ -57,6 +57,6 @@
             Route::get('inquiries', [DashboardController::class, 'inquiries'])->name('admin.inquiry');
             Route::get('/load-inquiries', [DashboardController::class, 'load_inquiries'])->name('admin.inquiry.load');
 
-            Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
+            Route::get('logout', [AuthController::class, 'logout'])->name('admin.logout');
         });
     });

@@ -18,7 +18,7 @@
                 <div class="service-single-content">
                     <div class="service-feature-image">
                         <figure class="image-anime reveal">
-                            <img src="{{ asset('assets/website/images/service-1.jpg') }}" alt="">
+                            <img src="{{ asset('uploads/service/'.$service->avatar) }}" alt="">
                         </figure>
                     </div>
                     <div class="service-entry">

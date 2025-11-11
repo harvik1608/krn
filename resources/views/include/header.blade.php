@@ -118,7 +118,7 @@
                                 <a class="dropdown-item" href="profile.html"><i class="ti ti-user-circle me-2"></i>Profile</a>
                                 <a class="dropdown-item" href="profile.html"><i class="ti ti-user-circle me-2"></i>Change Password</a>
                                 <hr class="my-2">
-                                <a class="dropdown-item logout pb-0" href="/admin/logout"><i class="ti ti-logout me-2"></i>Logout</a>
+                                <a class="dropdown-item logout pb-0" href="{{ route('admin.logout') }}"><i class="ti ti-logout me-2"></i>Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -128,7 +128,7 @@
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="profile.html">My Profile</a>
                             <a class="dropdown-item" href="general-settings.html">Settings</a>
-                            <a class="dropdown-item" href="/admin/logout">Logout</a>
+                            <a class="dropdown-item" href="{{ route('admin.logout') }}">Logout</a>
                         </div>
                     </div>
                 </div>

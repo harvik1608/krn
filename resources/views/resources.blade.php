@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12">
+            <div class="col-lg-12 mt-5">
                 <div class="project-single-content">
                     <div class="project-gallery gallery-items">
                         <h2 class="text-anime-style-2">Blog & Insights</h2>
@@ -51,9 +51,9 @@
                             @if(!$blogs->isEmpty())
                                 @foreach($blogs as $blog)
                                     <div class="project-gallery-img wow fadeInUp" data-cursor-text="View">
-                                        <a href="{{ asset('assets/website/images/gallery-7.jpg') }}">
+                                        <a href="{{ asset('uploads/blog/'.$blog->banner) }}">
                                             <figure class="image-anime reveal">
-                                                <img src="{{ asset('assets/website/images/gallery-7.jpg') }}" alt="">
+                                                <img src="{{ asset('uploads/blog/'.$blog->banner) }}" alt="">
                                             </figure>
                                         </a>
                                     </div>
