@@ -1,5 +1,10 @@
 @extends('include.front_header')
 @section('content')
+<style>
+    .page-header {
+        background-image: url("{{ asset('uploads/'.BANNER)  }}");
+    }
+</style>
 <div class="page-header parallaxie">
     <div class="container">
         <div class="row">
