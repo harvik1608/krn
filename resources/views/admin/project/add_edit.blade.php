@@ -13,8 +13,6 @@
     @endif
     <input type="hidden" class="form-control" name="old_avatar" value="{{ is_null($project) ? '' : $project->avatar }}" />
     <input type="hidden" class="form-control" name="old_after_avatar" value="{{ is_null($project) ? '' : $project->after_avatar }}" />
-    <input type="hidden" class="form-control" name="lat" value="{{ is_null($project) ? '' : $project->lat }}" />
-    <input type="hidden" class="form-control" name="lng" value="{{ is_null($project) ? '' : $project->lng }}" />
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -31,7 +29,15 @@
                             <label class="form-label">Address (as per google)</label>
                             <input type="text" class="form-control" name="address" id="address" value="{{ is_null($project) ? '' : $project->address }}" />
                         </div>
-                        <div class="col-lg-3 mb-3">
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">Lat</label>
+                            <input type="text" class="form-control" name="lat" id="lat" value="{{ is_null($project) ? '' : $project->lat }}" />
+                        </div>
+                        <div class="col-lg-4 mb-3">
+                            <label class="form-label">Lng</label>
+                            <input type="text" class="form-control" name="lng" id="lng" value="{{ is_null($project) ? '' : $project->lng }}" />
+                        </div>
+                        <div class="col-lg-4 mb-3">
                             <label class="form-label">Status</label>
                             <select class="select" name="is_active" id="is_active">
                                 <option value="1" {{ !is_null($project) && $project->is_active == 1 ? 'selected' : '' }}>Active</option>

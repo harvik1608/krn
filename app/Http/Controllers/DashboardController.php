@@ -26,7 +26,19 @@ class DashboardController extends Controller
         $total_inquiries = Inquiry::count();
         $total_reasons = WhyChoose::count();
         $total_pdfs = Download::count();
-        return view('admin.dashboard',compact('total_faqs','total_blogs','total_services','total_projects','total_inquiries','total_reasons','total_pdfs'));
+        $location = [];
+        $projects = Project::select("name","lat","lng")->where("is_active",1)->get();
+        if(!$projects->isEmpty()) {
+            foreach($projects as $row) {
+                $location[] = array(
+                    "lat" => $row->lat,
+                    "lng" => $row->lng,
+                    "name" => $row->name,
+                );
+            }
+        }
+        $locations = json_encode($location);
+        return view('admin.dashboard',compact('total_faqs','total_blogs','total_services','total_projects','total_inquiries','total_reasons','total_pdfs','locations'));
     }
 
     public function general_settings()
