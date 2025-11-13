@@ -9,6 +9,7 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\Service;
 use App\Models\Project;
+use App\Models\Site;
 use App\Models\Inquiry;
 use App\Models\WhyChoose;
 use App\Models\Download;
@@ -27,13 +28,15 @@ class DashboardController extends Controller
         $total_reasons = WhyChoose::count();
         $total_pdfs = Download::count();
         $location = [];
-        $projects = Project::select("name","lat","lng")->where("is_active",1)->get();
+        $projects = Site::select("address","lat","lng","project_status")->where("is_active",1)->get();
         if(!$projects->isEmpty()) {
             foreach($projects as $row) {
                 $location[] = array(
                     "lat" => $row->lat,
                     "lng" => $row->lng,
-                    "name" => $row->name,
+                    "name" => $row->address,
+                    "status" => $row->project_status,
+                    "year" => "2025"
                 );
             }
         }

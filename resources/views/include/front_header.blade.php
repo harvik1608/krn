@@ -44,7 +44,7 @@
 				<nav class="container">
 					<div class="navbar navbar-expand-lg">
 						<a class="navbar-brand" href="{{ route('home') }}">
-							<img src="{{ asset('assets/website/images/krn_logo_new.jpg') }}" alt="Logo">
+							<!-- <img src="{{ asset('assets/website/images/krn_logo.jpg') }}" alt="Logo"> -->
 						</a>
 						<div class="collapse navbar-collapse main-menu">
 	                        <div class="nav-menu-wrapper">

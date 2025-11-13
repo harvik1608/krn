@@ -21,30 +21,18 @@
                 </div>
                 <div class="card-body profile-body">
                     <div class="row">
-                        <div class="col-lg-12 mb-3">
+                        <div class="col-lg-6 mb-3">
                             <label class="form-label">Name<span class="text-danger ms-1">*</span></label>
                             <input type="text" class="form-control" name="name" id="name" value="{{ is_null($project) ? '' : $project->name }}" autofocus />
                         </div>
-                        <div class="col-lg-12 mb-3">
-                            <label class="form-label">Address (as per google)</label>
-                            <input type="text" class="form-control" name="address" id="address" value="{{ is_null($project) ? '' : $project->address }}" />
-                        </div>
-                        <div class="col-lg-4 mb-3">
-                            <label class="form-label">Lat</label>
-                            <input type="text" class="form-control" name="lat" id="lat" value="{{ is_null($project) ? '' : $project->lat }}" />
-                        </div>
-                        <div class="col-lg-4 mb-3">
-                            <label class="form-label">Lng</label>
-                            <input type="text" class="form-control" name="lng" id="lng" value="{{ is_null($project) ? '' : $project->lng }}" />
-                        </div>
-                        <div class="col-lg-4 mb-3">
+                        <div class="col-lg-6 mb-3">
                             <label class="form-label">Status</label>
                             <select class="select" name="is_active" id="is_active">
                                 <option value="1" {{ !is_null($project) && $project->is_active == 1 ? 'selected' : '' }}>Active</option>
                                 <option value="0" {{ !is_null($project) && $project->is_active == 0 ? 'selected' : '' }}>Inactive</option>
                             </select>
                         </div>
-                        <div class="col-lg-12 mb-3">
+                        <div class="col-lg-6 mb-3">
                             <div class="file-drop mb-3 text-center">
                                 <span class="avatar avatar-sm bg-primary text-white mb-2">
                                     <i class="ti ti-upload fs-16"></i>
@@ -57,7 +45,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-12 mb-3">
+                        <div class="col-lg-6 mb-3">
                             <div class="file-drop mb-3 text-center">
                                 <span class="avatar avatar-sm bg-primary text-white mb-2">
                                     <i class="ti ti-upload fs-16"></i>

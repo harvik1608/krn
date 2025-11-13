@@ -239,8 +239,11 @@
                             <li class="submenu-open">
                                 <h6 class="submenu-hdr">Project</h6>
                                 <ul id="main_menu_list">
-                                    <li class="permission" data-module="project" data-title="">
+                                    <li class="permission" data-module="project" data-title="Project">
                                         <a href="{{ url('admin/projects') }}"><i data-feather="box"></i><span>Project List</span></a>
+                                    </li>
+                                    <li class="permission" data-module="site" data-title="Site">
+                                        <a href="{{ url('admin/sites') }}"><i data-feather="box"></i><span>Site List</span></a>
                                     </li>
                                 </ul>
                             </li>

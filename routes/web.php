@@ -5,6 +5,7 @@
     use App\Http\Controllers\FaqController;
     use App\Http\Controllers\ServiceController;
     use App\Http\Controllers\ProjectController;
+    use App\Http\Controllers\SiteController;
     use App\Http\Controllers\DownloadController;
     use App\Http\Controllers\ToolController;
     use App\Http\Controllers\BlogController;
@@ -41,6 +42,11 @@
 
             Route::resource('projects', ProjectController::class);
             Route::get('/load-projects', [ProjectController::class, 'load'])->name('admin.project.load');
+
+            Route::resource('sites', SiteController::class);
+            Route::get('/load-sites', [SiteController::class, 'load'])->name('admin.site.load');
+            Route::post('/upload-site', [SiteController::class, 'import'])->name('admin.upload.site');
+            Route::get('/download-sample', [SiteController::class, 'downloadSample'])->name('admin.download.sample');
 
             Route::resource('downloads', DownloadController::class);
             Route::get('/load-downloads', [DownloadController::class, 'load'])->name('admin.download.load');
