@@ -59,6 +59,15 @@
 			<p>TOTAL PDF</p>
 		</div>
 	</div>
+	<div class="col-xl-3 col-sm-6 col-12 d-flex">
+		<div class="card color-info bg-primary flex-fill mb-4">
+			<div class="mb-2">
+				
+			</div>
+			<h3 class="counters" data-count="{{ $total_sites }}">{{ $total_sites }}</h3>
+			<p>TOTAL Site</p>
+		</div>
+	</div>
 	<div style="margin-bottom: 10px;">
 		<label for="yearFilter">Year:</label>
 		<select id="yearFilter" onchange="updateMap()">
