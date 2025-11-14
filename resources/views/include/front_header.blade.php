@@ -44,7 +44,7 @@
 				<nav class="container">
 					<div class="navbar navbar-expand-lg">
 						<a class="navbar-brand" href="{{ route('home') }}">
-							<!-- <img src="{{ asset('assets/website/images/krn_logo.jpg') }}" alt="Logo"> -->
+							<img src="{{ asset('assets/website/images/krn_logo.jpg') }}" alt="Logo">
 						</a>
 						<div class="collapse navbar-collapse main-menu">
 	                        <div class="nav-menu-wrapper">
@@ -114,7 +114,7 @@
 	                     <div class="footer-links">
 	                        <h3>information</h3>
 	                        <ul>
-	                            <li><a href="{{ route('about') }}">about our company</a></li>
+	                            <!-- <li><a href="{{ route('about') }}">about our company</a></li> -->
 	                            <li><a href="{{ route('resources') }}">our resources</a></li>
 	                            <li><a href="{{ route('blogs') }}">our blog</a></li>
 	                            <li><a href="{{ route('projects') }}">our latest projects</a></li>

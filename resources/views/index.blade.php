@@ -45,54 +45,41 @@
                     <?php } ?>
                 </div>
             </div>
-
             <div class="col-lg-6">
-                <!-- About Us Content Start -->
                 <div class="about-us-content">
-                    <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">about us</h3>
                         <h2 class="text-anime-style-2" data-cursor="-opaque"><span>{{ ABOUT_US_TITLE }}</span></h2>
                         <p class="wow fadeInUp" data-wow-delay="0.2s">{{ ABOUT_US }}</p>
                     </div>
-                    <!-- Section Title End -->
-
-                    <!-- About Us Content Body Start -->
                     <div class="about-us-content-body">
-                        <!-- About Content Info Start -->
                         <div class="about-us-content-info">
-                            <!-- About Us Content List Start -->
                             <div class="about-us-content-list wow fadeInUp" data-wow-delay="0.4s">
                                 <ul>
-                                    <li>creative expertise</li>
-                                    <li>client-centered approach</li>
+                                    @php 
+                                        $points = explode(",",ABOUT_US_POINT);
+                                    @endphp
+                                    @if(!empty($points))
+                                        @foreach($points as $point)
+                                            <li>{{ ucwords(strtolower($point)) }}</li>
+                                        @endforeach
+                                    @endif
                                 </ul>
                             </div>
-                            <!-- About Us Content List End -->
-
-                            <!-- About Us Content Button Start -->
-                            <div class="about-us-content-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <!-- <div class="about-us-content-btn wow fadeInUp" data-wow-delay="0.6s">
                                 <a href="{{ route('about') }}" class="btn-default">read more</a>
-                            </div>
-                            <!-- About Us Content Button End -->
+                            </div> -->
                         </div>
-                        <!-- About Content Info End -->
-
-                        <!-- About Content List Start -->
                         <div class="about-us-contact-list">
-                            <!-- About Contact Item Start -->
                             <div class="about-contact-item wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="icon-box">
                                     <i class="fa-solid fa-phone"></i>
                                 </div>
                                 <div class="about-contact-content">
                                     <p>need any help?</p>
-                                    <h3>{{ APP_HELPLINE_NO }}</h3>
+                                    <h3><a href="tel: {{ APP_HELPLINE_NO }}">{{ APP_HELPLINE_NO }}</a></h3>
                                 </div>
                             </div>
-                            <!-- About Contact Item End -->
-
-                            <!-- About Contact Item Start -->
                             <div class="about-contact-item wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="icon-box">
                                     <figure class="image-anime">
@@ -100,17 +87,13 @@
                                     </figure>
                                 </div>
                                 <div class="about-contact-content">
-                                    <h3>{{ APP_FOUNDER_NAME }}</h3>
-                                    <p>founder</p>
+                                    <h3>need any help?</h3>
+                                    <p><a href="mail: {{ APP_EMAIL }}">{{ APP_EMAIL }}</a></p>
                                 </div>
                             </div>
-                            <!-- About Contact Item End -->
                         </div>
-                        <!-- About Content Info End -->
                     </div>
-                    <!-- About Us Content Body End -->
                 </div>
-                <!-- About Us Content End -->
             </div>
         </div>
     </div>
@@ -227,17 +210,17 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="service-item wow fadeInUp">
                             <div class="service-image">
-                                <a href="service-single.html" data-cursor-text="View">
+                                <a href="{{ route('service', ['slug' => $service->slug]) }}" data-cursor-text="View">
                                     <figure class="image-anime">
                                         <img src="{{ asset('uploads/service/'.$service->avatar) }}" alt="">
                                     </figure>
                                 </a>
                             </div>
                             <div class="service-btn">
-                                <a href="service-single.html"><img src="{{ asset('assets/website/images/arrow-white.svg') }}" alt=""></a>
+                                <a href="{{ route('service', ['slug' => $service->slug]) }}"><img src="{{ asset('assets/website/images/arrow-white.svg') }}" alt=""></a>
                             </div>
                             <div class="service-content">
-                                <h3><a href="service-single.html">{{ $service->name }}</a></h3>
+                                <h3><a href="{{ route('service', ['slug' => $service->slug]) }}">{{ $service->name }}</a></h3>
                                 <p>{{ $service->short_description }}</p>
                             </div>
                         </div>

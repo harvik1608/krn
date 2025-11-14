@@ -77,6 +77,10 @@
                             <textarea class="form-control" name="about_us" id="about_us">{{ isset($about_us) ? $about_us : '' }}</textarea>
                         </div>
                         <div class="col-lg-12 mb-3">
+                            <label class="form-label">About Us Points<span class="text-danger ms-1">*</span></label>
+                            <textarea class="form-control" name="about_us_point" id="about_us_point">{{ isset($about_us_point) ? $about_us_point : '' }}</textarea>
+                        </div>
+                        <div class="col-lg-12 mb-3">
                             <label class="form-label">Why Choose Us Title<span class="text-danger ms-1">*</span></label>
                             <textarea class="form-control" name="why_choose_us_title" id="why_choose_us_title">{{ isset($why_choose_us_title) ? $why_choose_us_title : '' }}</textarea>
                         </div>
