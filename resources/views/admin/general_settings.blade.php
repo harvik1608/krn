@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-lg-3 mb-3">
                             <label class="form-label">App. Name<span class="text-danger ms-1">*</span></label>
-                            <input type="text" class="form-control" name="app_name" id="app_name" value="{{ isset($app_name) ? $app_name : '' }}" autofocus />
+                            <input type="text" class="form-control" name="app_name" id="app_name" value="{{ isset($app_name) ? $app_name : '' }}" />
                         </div>
                         <div class="col-lg-3 mb-3">
                             <label class="form-label">App. Email<span class="text-danger ms-1">*</span></label>
@@ -245,7 +245,7 @@
                                 <p class="fs-12 mb-0"></p>
                                 <input type="file" name="contact_us_image" id="contact_us_image">
                                 @if(isset($contact_us_image) && $contact_us_image != "")
-                                    <img src="{{ asset('uploads/'.$video) }}" style="width: 100px;height: 100px;" class="img img-thumbnail img-responsive" />
+                                    <img src="{{ asset('uploads/'.$contact_us_image) }}" style="width: 100px;height: 100px;" class="img img-thumbnail img-responsive" />
                                     <input type="hidden" name="old_contact_us_image" value="{{ isset($contact_us_image) ? $contact_us_image : '' }}" />
                                 @endif
                             </div>
