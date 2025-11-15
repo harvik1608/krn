@@ -65,7 +65,7 @@ class DashboardController extends Controller
             foreach($post as $key => $val) {
                 $data[] = ['setting_key' => $key,'setting_val' => $val,"created_at" => date("Y-m-d H:i:s")];
             }
-            if($request->hasFile('banner_image')) {
+            if($request->hasFile('banner_image') && $request->file('banner_image')->isValid()) {
                 $banner_image = $request->file('banner_image');
 
                 // generate random file name
@@ -77,10 +77,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "banner",'setting_val' => $banner_photo,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_banner"]);
             } else {
                 $data[] = ['setting_key' => "banner",'setting_val' => $post["old_banner"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_banner"]);
             }
-            if($request->hasFile('about_image_1')) {
+            if($request->hasFile('about_image_1') && $request->file('about_image_1')->isValid()) {
                 $about_image_1 = $request->file('about_image_1');
 
                 // generate random file name
@@ -92,10 +94,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "about_image_1",'setting_val' => $about_photo_1,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_about_image_1"]);
             } else {
                 $data[] = ['setting_key' => "about_image_1",'setting_val' => $post["old_about_image_1"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_about_image_1"]);
             }
-            if($request->hasFile('about_image_2')) {
+            if($request->hasFile('about_image_2') && $request->file('about_image_2')->isValid()) {
                 $about_image_2 = $request->file('about_image_2');
 
                 // generate random file name
@@ -107,10 +111,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "about_image_2",'setting_val' => $about_photo_2,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_about_image_2"]);
             } else {
                 $data[] = ['setting_key' => "about_image_2",'setting_val' => $post["old_about_image_2"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_about_image_2"]);
             }
-            if($request->hasFile('why_choose_1')) {
+            if($request->hasFile('why_choose_1') && $request->file('why_choose_1')->isValid()) {
                 $why_choose_1 = $request->file('why_choose_1');
 
                 // generate random file name
@@ -122,10 +128,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "why_choose_1",'setting_val' => $why_photo_1,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_1"]);
             } else {
                 $data[] = ['setting_key' => "why_choose_1",'setting_val' => $post["old_why_choose_1"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_1"]);
             }
-            if($request->hasFile('why_choose_2')) {
+            if($request->hasFile('why_choose_2') && $request->file('why_choose_2')->isValid()) {
                 $why_choose_2 = $request->file('why_choose_2');
 
                 // generate random file name
@@ -137,10 +145,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "why_choose_2",'setting_val' => $why_photo_2,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_2"]);
             } else {
                 $data[] = ['setting_key' => "why_choose_2",'setting_val' => $post["old_why_choose_2"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_2"]);
             }
-            if($request->hasFile('why_choose_3')) {
+            if($request->hasFile('why_choose_3') && $request->file('why_choose_3')->isValid()) {
                 $why_choose_3 = $request->file('why_choose_3');
 
                 // generate random file name
@@ -152,10 +162,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "why_choose_3",'setting_val' => $why_photo_3,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_3"]);
             } else {
                 $data[] = ['setting_key' => "why_choose_3",'setting_val' => $post["old_why_choose_3"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_3"]);
             }
-            if($request->hasFile('why_choose_4')) {
+            if($request->hasFile('why_choose_4') && $request->file('why_choose_4')->isValid()) {
                 $why_choose_4 = $request->file('why_choose_4');
 
                 // generate random file name
@@ -167,10 +179,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "why_choose_4",'setting_val' => $why_photo_4,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_4"]);
             } else {
                 $data[] = ['setting_key' => "why_choose_4",'setting_val' => $post["old_why_choose_4"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_why_choose_4"]);
             }
-            if($request->hasFile('video')) {
+            if($request->hasFile('video') && $request->file('video')->isValid()) {
                 $video = $request->file('video');
 
                 // generate random file name
@@ -182,10 +196,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "video",'setting_val' => $video_url,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_video"]);
             } else {
                 $data[] = ['setting_key' => "video",'setting_val' => $post["old_video"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_video"]);
             }
-            if($request->hasFile('contact_us_image')) {
+            if($request->hasFile('contact_us_image') && $request->file('contact_us_image')->isValid()) {
                 $contact_us_image = $request->file('contact_us_image');
 
                 // generate random file name
@@ -197,10 +213,12 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "contact_us_image",'setting_val' => $contact_us_photo,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_contact_us_image"]);
             } else {
                 $data[] = ['setting_key' => "contact_us_image",'setting_val' => $post["old_contact_us_image"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_contact_us_image"]);
             }
-            if($request->hasFile('testimonial')) {
+            if($request->hasFile('testimonial') && $request->file('testimonial')->isValid()) {
                 $testimonial = $request->file('testimonial');
 
                 // generate random file name
@@ -212,8 +230,10 @@ class DashboardController extends Controller
                 }
 
                 $data[] = ['setting_key' => "testimonial",'setting_val' => $testimonial_photo,"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_testimonial"]);
             } else {
                 $data[] = ['setting_key' => "testimonial",'setting_val' => $post["old_testimonial"],"created_at" => date("Y-m-d H:i:s")];
+                unset($post["old_testimonial"]);
             }
             
             General_setting::truncate();
